@@ -1,0 +1,33 @@
+LUMIÈRE CAPILAR — CATÁLOGO EDITABLE
+
+Qué incluye:
+- Catálogo público responsive.
+- Buscador, categorías y orden.
+- Carrito y pedido por WhatsApp.
+- Administrador en /admin/.
+- Campos para nombre, categoría, tamaño, precio transferencia, precio efectivo, stock, foto y descripción.
+- 4 productos iniciales de Keratin Alpha Sleek con los precios que me diste.
+
+IMPORTANTE:
+Para que el administrador funcione, el sitio debe estar conectado a un repositorio GitHub y publicado en Netlify con el build "node build.js". No alcanza con el Drag & Drop simple, porque Decap necesita escribir los cambios en el repositorio.
+
+PASOS:
+1) Crear/iniciar sesión en GitHub.
+2) Crear un repositorio nuevo, por ejemplo "lumiere-capilar".
+3) Subir TODO el contenido de esta carpeta al repositorio (incluyendo .gitignore si lo agregás).
+4) En Netlify: Add new project > Import an existing project > GitHub > elegir el repositorio.
+5) Netlify leerá netlify.toml: build command "node build.js", publish directory "public".
+6) En Netlify, habilitar Identity.
+7) En Identity > Registration, elegir "Invite only".
+8) Habilitar Git Gateway.
+9) Invitar tu email como usuario.
+10) Abrir TU-SITIO.netlify.app/admin/ e iniciar sesión.
+11) Desde "Productos" podés crear, editar o eliminar productos. Los cambios guardados se publican mediante el repositorio y el deploy de Netlify.
+
+WhatsApp:
+En public/index.html se genera el número desde build.js. Antes de publicar, buscá:
+const WHATSAPP="549XXXXXXXXXX";
+y reemplazalo por tu número internacional sin + ni espacios. Si cambiás build.js después, Netlify lo regenerará en el próximo deploy.
+
+NOTA:
+La documentación oficial de Decap recomienda Netlify Identity + Git Gateway para este flujo y Netlify ejecuta el build cada vez que se actualiza la rama de producción.
